@@ -1,7 +1,7 @@
 {
   "name": "bc-number-input",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.8",
+  "description": "Strict Number input box",
   "directories": {
     "doc": "doc",
     "test": "tests"

@@ -1,0 +1,13 @@
+<label class="number-input__label">{{label}}</label>
+<div class="number-input__controls">
+
+  <button class='down_button number-input__button number-input__button--down' {{action 'decrease'}}>down</button>
+
+  <span class="number-input--prefix">{{prefix}}</span>
+  {{input class="number_input number-input__input" type='text' inputmode='numeric' value=value}}
+  <span class="number-input--suffix">{{suffix}}</span>
+  
+  <button class='up_button number-input__button number-input__button--up' {{ action 'increase'}}>up</button>
+
+</div>
+{{yield}}
