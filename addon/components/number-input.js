@@ -3,6 +3,21 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   id: '',
   classNames: ['number-input'],
+  classNameBindings: ['hasPrefix', 'hasSuffix'],
+  hasPrefix: Ember.computed('prefix', function() {
+    if (this.get('prefix') === '') {
+      return false;
+    } else {
+      return true;
+    }
+  }),
+  hasSuffix: Ember.computed('suffix', function() {
+    if (this.get('suffix') === '') {
+      return false;
+    } else {
+      return true;
+    }
+  }),
   value: '0',
   previousValue: '0',
   prefix: '', // for $ % etc

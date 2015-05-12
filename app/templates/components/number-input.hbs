@@ -1,9 +1,9 @@
-  <button class='number-input__button number-input__button--down' {{action 'decrease'}}>down</button>
+<button class='number-input__button number-input__button--down' {{action 'decrease'}}></button>
 
-  <span class="number-input__prefix">{{prefix}}</span>
+<span class="number-input__prefix">{{prefix}}</span>
   {{input class="number-input__input" type='text' inputmode='numeric' value=value}}
-  <span class="number-input__suffix">{{suffix}}</span>
+<span class="number-input__suffix">{{suffix}}</span>
   
-  <button class='number-input__button number-input__button--up' {{ action 'increase'}}>up</button>
+<button class='number-input__button number-input__button--up' {{action 'increase'}}></button>
 
 {{yield}}
