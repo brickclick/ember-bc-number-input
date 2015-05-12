@@ -17,13 +17,6 @@ module('Acceptance: NumberInput', {
   }
 });
 
-// test('visiting /number-input', function(assert) {
-//   visit('/number-input');
-
-//   andThen(function() {
-//     assert.equal(currentURL(), '/number-input');
-//   });
-// });
 var testables = [
   {inputString: '123', expectedResult: '123'},
   {inputString: '-123', expectedResult: '-123'},
@@ -112,20 +105,6 @@ test('down key', function(assert) {
   });
 });
 
-// test('test test', function(assert) {
-//   visit('/');
-//   let el = find('input.number_input:first')
-//   fillIn('input.number_input:first', '12345')
-//   el.focus();
-//   click('input.number_input:first')
-//   console.log(el);
-//   keyEvent('input.number_input:first', 'keypress', 8);
-//   keyEvent('input.number_input:first', 'keydown', 8);
-//   keyEvent('input.number_input:first', 'keyup', 8);
-//   andThen(function() {
-//     assert.equal(find('input.number_input:first').val(), '1234');
-//   });
-// });
 
 
 

@@ -24,7 +24,6 @@ export default Ember.Component.extend({
   shiftPressed: false,
 
   filterInput: Ember.observer('value', function() {
-    console.log('filter input called');
     let obj = this;
     let value = obj.get('value').toString();
     let previousValue = obj.get('previousValue');
