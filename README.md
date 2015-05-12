@@ -1,4 +1,4 @@
-# Bc-number-input
+# Ember-bc-number-input
 
 This README outlines the details of collaborating on this Ember addon.
 
