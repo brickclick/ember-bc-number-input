@@ -61,54 +61,54 @@ for (let i = 0; i < testables.length; i++) {
 function numberInputTest(inputString, expectedResult) { //JSHint doesn't like functions inside of loops
   test('number-input test: ' + inputString, function(assert) {
     visit('/');
-    fillIn('input.number_input:first', inputString);
+    fillIn('input.number-input__input:first', inputString);
     andThen(function(){
-      assert.equal(find('input.number_input:first').val(), expectedResult);
+      assert.equal(find('input.number-input__input:first').val(), expectedResult);
     });
   });
 }
 test('button down', function(assert) {
   visit('/');
-  let startNum = find('input.number_input:first').val();
+  let startNum = find('input.number-input__input:first').val();
   if (!startNum) {
     startNum = 0;
   }
-  click('.down_button');
+  click('.number-input__button--down');
   andThen(function(){
-    assert.equal(find('input.number_input:first').val(), (startNum - 1).toString());
+    assert.equal(find('input.number-input__input:first').val(), (startNum - 1).toString());
   });
 });
 test('button up', function(assert) {
   visit('/');
-  let startNum = find('input.number_input:first').val();
+  let startNum = find('input.number-input__input:first').val();
   if (!startNum) {
     startNum = 0;
   }
-  click('.up_button');
+  click('.number-input__button--up');
   andThen(function() {
-    assert.equal(find('input.number_input:first').val(), (startNum + 1).toString());
+    assert.equal(find('input.number-input__input:first').val(), (startNum + 1).toString());
   });
 });
 test('up key', function(assert) {
   visit('/');
-  let startNum = find('input.number_input:first').val();
+  let startNum = find('input.number-input__input:first').val();
   if (!startNum) {
     startNum = 0;
   }
-  keyEvent('input.number_input:first', 'keydown', 38);
+  keyEvent('input.number-input__input:first', 'keydown', 38);
   andThen(function() {
-    assert.equal(find('input.number_input:first').val(), (startNum + 1).toString());
+    assert.equal(find('input.number-input__input:first').val(), (startNum + 1).toString());
   });
 });
 test('down key', function(assert) {
   visit('/');
-  let startNum = find('input.number_input:first').val();
+  let startNum = find('input.number-input__input:first').val();
   if (!startNum) {
     startNum = 0;
   }
-  keyEvent('input.number_input:first', 'keydown', 40);
+  keyEvent('input.number-input__input:first', 'keydown', 40);
   andThen(function() {
-    assert.equal(find('input.number_input:first').val(), (startNum - 1).toString());
+    assert.equal(find('input.number-input__input:first').val(), (startNum - 1).toString());
   });
 });
 

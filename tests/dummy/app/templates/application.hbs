@@ -1,4 +1,18 @@
 <h2 id="title">Welcome to Ember.js</h2>
+bare:
+{{number-input}}
+label='prefix: '
+{{number-input prefix='$' label='prefix: '}}
+label='suffix: '
+{{number-input suffix='%' }}
+label='increment: 7 '
+{{number-input increment=7 }}
+label='max decimals: 2 '
+{{number-input maxDecimals=2 }}
+label='max decimals: 0 '
+{{number-input maxDecimals=0 }}
+label='max/min: 10 '
+{{number-input man=10 min=10 }}
 
 {{outlet}}
 {{number-input}}

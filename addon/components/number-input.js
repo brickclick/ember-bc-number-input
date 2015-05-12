@@ -1,14 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  id: '',
   classNames: ['number-input'],
-  label: '',
   value: '0',
   previousValue: '0',
   prefix: '', // for $ % etc
   suffix: '',
   increment: 1,
   maxDecimals: 4,
+  max: null,
+  min: null,
   cursorPos: '0',
   whitelistKeys: [
     8, 9, // delete, tab
