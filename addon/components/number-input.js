@@ -56,10 +56,16 @@ export default Ember.Component.extend({
 
   actions: {
     increase: function() {
-      this.incrementProperty('value', this.get('increment'));
+      console.log(this.get('max'));
+      if ( (this.get('max') === null) || ( (parseInt(this.get('value'), 10) + this.get('increment')) <= this.get('max') ) ) {
+        this.incrementProperty('value', this.get('increment'));
+      }
     },
     decrease: function() {
-      this.decrementProperty('value', this.get('increment'));
+      console.log(this.get('min'))
+      if ( (this.get('min') === null) || ( (parseInt(this.get('value'), 10) - this.get('increment')) >= this.get('min')) ) {
+        this.decrementProperty('value', this.get('increment'));
+      }
     },
     setCursor: function(e, pos) {
       Ember.run.later(function(){
