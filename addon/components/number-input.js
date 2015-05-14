@@ -42,7 +42,7 @@ export default Ember.Component.extend({
     let obj = this;
     let value = obj.get('value').toString();
     let previousValue = obj.get('previousValue');
-    if (!validInput(value)) {
+    if (!validInput(value, this.get('max'), this.get('min'))) {
       obj.sendAction('error');
       Ember.run.later(function() {
         obj.set('value', previousValue); //rejected
@@ -53,7 +53,6 @@ export default Ember.Component.extend({
       obj.send('round');
     }
   }),
-
   actions: {
     increase: function() {
       console.log(this.get('max'));
@@ -208,8 +207,12 @@ export default Ember.Component.extend({
     }
   }
 });
-function validInput(value) {
-  if ( (!value.match(/^-?(0\.)?[0-9]*\.?\d*$/)) || (value.match(/.*\..*\..*/) /*|| value.match(/^-?00/)*/ )) {
+function validInput(value, max, min) {
+  max = parseInt(max, 10)
+  min = parseInt(min, 10)
+  if ( (!value.match(/^-?(0\.)?[0-9]*\.?\d*$/)) || (value.match(/.*\..*\..*/)/*|| value.match(/^-?00/)*/ )) {
+    return false;
+  } else if (( parseInt(value, 10) > max ) || ( parseInt(value, 10) < min )) {
     return false;
   } else {
     return true;
