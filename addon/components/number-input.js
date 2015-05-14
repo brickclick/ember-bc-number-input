@@ -24,8 +24,8 @@ export default Ember.Component.extend({
   suffix: '',
   increment: 1,
   maxDecimals: 4,
-  max: null,
-  min: null,
+  max: 9999,
+  min: -999,
   cursorPos: '0',
   whitelistKeys: [
     8, 9, // delete, tab
@@ -55,13 +55,11 @@ export default Ember.Component.extend({
   }),
   actions: {
     increase: function() {
-      console.log(this.get('max'));
       if ( (this.get('max') === null) || ( (parseInt(this.get('value'), 10) + this.get('increment')) <= this.get('max') ) ) {
         this.incrementProperty('value', this.get('increment'));
       }
     },
     decrease: function() {
-      console.log(this.get('min'))
       if ( (this.get('min') === null) || ( (parseInt(this.get('value'), 10) - this.get('increment')) >= this.get('min')) ) {
         this.decrementProperty('value', this.get('increment'));
       }

@@ -46,7 +46,11 @@ var testables = [
   {inputString: '0.123.123', expectedResult: '0'},
   {inputString: '02312', expectedResult: '2312'},
   {inputString: '1.2345678', expectedResult: '1.2346'},
-  {inputString: '-1.2345678', expectedResult: '-1.2346'}
+  {inputString: '-1.2345678', expectedResult: '-1.2346'},
+  {inputString: '10000', expectedResult: '0'},
+  {inputString: '-1000', expectedResult: '0'},
+  {inputString: '9999', expectedResult: '9999'},
+  {inputString: '-999', expectedResult: '-999'}
   ];
 for (let i = 0; i < testables.length; i++) {
   numberInputTest(testables[i].inputString, testables[i].expectedResult);
