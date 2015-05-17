@@ -208,7 +208,7 @@ export default Ember.Component.extend({
 function validInput(value, max, min) {
   max = parseInt(max, 10)
   min = parseInt(min, 10)
-  if ( (!value.match(/^-?(0\.)?[0-9]*\.?\d*$/)) || (value.match(/.*\..*\..*/)/*|| value.match(/^-?00/)*/ )) {
+  if ( (!value.match(/^-?(0\.)?[0-9]*\.?\d*$/)) || (value.match(/.*\..*\..*/)) ) {
     return false;
   } else if (( parseInt(value, 10) > max ) || ( parseInt(value, 10) < min )) {
     return false;
