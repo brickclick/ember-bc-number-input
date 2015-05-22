@@ -57,11 +57,15 @@ export default Ember.Component.extend({
     increase: function() {
       if ( (this.get('max') === null) || ( (parseInt(this.get('value'), 10) + this.get('increment')) <= this.get('max') ) ) {
         this.incrementProperty('value', this.get('increment'));
+      } else if ( ( this.get('value') === '' ) || ( this.get('value') === '-') ) {
+        this.set('value', '1')
       }
     },
     decrease: function() {
       if ( (this.get('min') === null) || ( (parseInt(this.get('value'), 10) - this.get('increment')) >= this.get('min')) ) {
         this.decrementProperty('value', this.get('increment'));
+      } else if ( ( this.get('value') === '' ) || ( this.get('value') === '-') ) {
+        this.set('value', '-1')
       }
     },
     setCursor: function(e, pos) {
